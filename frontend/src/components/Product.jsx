@@ -15,7 +15,7 @@ const Product = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8092/api/product/${id}`
+          `https://ecommerce-backend-springboot-1.onrender.com/api/product/${id}`
         );
 
         const p = response.data;
@@ -47,7 +47,7 @@ const Product = () => {
     const fetchImage = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8092/api/product/${id}/image`,
+          `https://ecommerce-backend-springboot-1.onrender.com/api/product/${id}/image`,
           { responseType: "blob" }
         );
         setImageUrl(URL.createObjectURL(response.data));
@@ -61,7 +61,7 @@ const Product = () => {
 
   const deleteProduct = async () => {
     try {
-      await axios.delete(`http://localhost:8092/api/product/${id}`);
+      await axios.delete(`https://ecommerce-backend-springboot-1.onrender.com/api/product/${id}`);
       removeFromCart(id);
       alert("Product deleted successfully");
       refreshData();
