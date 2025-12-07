@@ -26,7 +26,7 @@ const Home = ({ selectedCategory }) => {
 
             try {
               const response = await axios.get(
-                `http://localhost:8092/api/product/${id}/image`,
+                `https://ecommerce-backend-springboot-1.onrender.com/api/product/${id}/image`,
                 { responseType: "blob" }
               );
 
