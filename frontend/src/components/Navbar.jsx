@@ -23,7 +23,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
   // Fetch all products initially (for search)
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8092/api/products");
+      const response = await axios.get("https://ecommerce-backend-springboot-1.onrender.com/api/products");
 
       // MAP BACKEND → FRONTEND
       const mapped = response.data.map((p) => ({
@@ -48,7 +48,7 @@ const Navbar = ({ onSelectCategory, onSearch }) => {
 
       try {
         const response = await axios.get(
-          `http://localhost:8092/api/products/search?name=${value}`
+          `https://ecommerce-backend-springboot-1.onrender.com/api/products/search?name=${value}`
         );
 
         // MAP BACKEND → FRONTEND
