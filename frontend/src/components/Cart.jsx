@@ -14,7 +14,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchImagesAndUpdateCart = async () => {
       try {
-        const response = await axios.get("http://localhost:8092/api/products");
+        const response = await axios.get("https://ecommerce-backend-springboot-1.onrender.com/api/products");
 
         // backend uses p_id
         const backendProductIds = response.data.map((p) => p.p_id);
@@ -28,7 +28,7 @@ const Cart = () => {
           updatedCartItems.map(async (item) => {
             try {
               const imgRes = await axios.get(
-                `http://localhost:8092/api/product/${item.id}/image`,
+                `https://ecommerce-backend-springboot-1.onrender.com/api/product/${item.id}/image`,
                 { responseType: "blob" }
               );
 
@@ -135,7 +135,7 @@ const Cart = () => {
         );
 
         await axios.put(
-          `http://localhost:8092/api/product/${item.id}`,
+          `https://ecommerce-backend-springboot-1.onrender.com/api/product/${item.id}`,
           cartProduct,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
