@@ -24,7 +24,7 @@ const UpdateProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8092/api/product/${id}`
+          `https://ecommerce-backend-springboot-1.onrender.com/api/product/${id}`
         );
         const p = response.data;
 
@@ -47,7 +47,7 @@ const UpdateProduct = () => {
 
         // fetch image
         const imageResponse = await axios.get(
-          `http://localhost:8092/api/product/${id}/image`,
+          `https://ecommerce-backend-springboot-1.onrender.com/api/product/${id}/image`,
           { responseType: "blob" }
         );
 
@@ -83,7 +83,7 @@ const UpdateProduct = () => {
 
     try {
       await axios.put(
-        `http://localhost:8092/api/product/${id}`,
+        `https://ecommerce-backend-springboot-1.onrender.com/api/product/${id}`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
